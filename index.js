@@ -4,8 +4,8 @@ function getNotchForValue(notches, value){
 
     for(var i = 0; i < notches.length; i++){
         var currentNotch = notches[i];
-        if(Math.abs(currentNotch - value) < Math.abs(closestNotch - value)){
-            closestNotch = key;
+        if(Math.abs(currentNotch - value) < (closestNotch != null ? Math.abs(closestNotch - value) : Infinity)){
+            closestNotch = currentNotch;
         }
     }
 
@@ -17,9 +17,9 @@ function Notchy(notches, notchyness){
     this._notches = notches;
     this._notchyness = notchyness;
 }
-Notchy.prototype.value = function(value){
+Notchy.prototype.notch = function(value){
     if(value == null){
-        return this._value;
+        return this._currentNotch;
     }
 
     if(isNaN(value)){
@@ -38,3 +38,5 @@ Notchy.prototype.value = function(value){
 
     return this._currentNotch;
 };
+
+module.exports = Notchy;
