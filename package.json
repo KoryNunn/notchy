@@ -1,6 +1,6 @@
 {
   "name": "notchy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple number binning module. Emulates the flap on a wheel-of-fortune-like wheel",
   "main": "index.js",
   "directories": {
